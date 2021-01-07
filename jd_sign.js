@@ -108,8 +108,7 @@ function main() {
   }
   if (!push_key) {
     console.log('请配置京东push_key!'); return;
-  }else
-  {
+  }else{
     console.log('PUSH_KEY'+push_key);
     return;
   }
