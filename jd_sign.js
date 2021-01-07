@@ -14,8 +14,7 @@ const dual_cookie = process.env.JD_DUAL_COOKIE
 // Server酱SCKEY
 const push_key = process.env.PUSH_KEY
 
-console.log('PUSH_KEY'+push_key);
-return;
+
 // 京东脚本文件
 const js_url = 'https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js'
 // 下载脚本路劲
@@ -107,7 +106,13 @@ function main() {
   if (!cookie) {
     console.log('请配置京东cookie!'); return;
   }
-
+  if (!push_key) {
+    console.log('请配置京东push_key!'); return;
+  }else
+  {
+    console.log('PUSH_KEY'+push_key);
+    return;
+  }
   // 1、下载脚本
   download(js_url, './').then(res=>{
     // 2、替换cookie
